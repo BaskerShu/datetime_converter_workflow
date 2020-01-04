@@ -7,7 +7,7 @@ from collections import namedtuple
 from dateutil import tz
 import time
 from parser.factory import ParserFactory
-from workflow import Workflow, ICON_WEB
+from workflow import Workflow, ICON_CLOCK
 
 # 获取时区
 tz_str = os.environ.get('ALFRED_TZ')
@@ -28,7 +28,7 @@ def process(wf):
                         subtitle=item.subtitle,
                         arg=item.arg,
                         valid=True,
-                        icon=ICON_WEB)
+                        icon=ICON_CLOCK)
     wf.send_feedback()
 
 

@@ -7,7 +7,23 @@
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>11EEB31F-B27C-4C98-B536-BF5A91F03994</key>
+		<array/>
+		<key>C84729B3-9AE2-4AD7-92CD-68933E13A363</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>11EEB31F-B27C-4C98-B536-BF5A91F03994</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>shizi</string>
 	<key>description</key>
@@ -18,6 +34,23 @@
 	<string>时间戳转化工具</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>11EEB31F-B27C-4C98-B536-BF5A91F03994</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -32,7 +65,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>tt</string>
+				<string>dt</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -70,12 +103,19 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>11EEB31F-B27C-4C98-B536-BF5A91F03994</key>
+		<dict>
+			<key>xpos</key>
+			<integer>600</integer>
+			<key>ypos</key>
+			<integer>190</integer>
+		</dict>
 		<key>C84729B3-9AE2-4AD7-92CD-68933E13A363</key>
 		<dict>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>280</integer>
 			<key>ypos</key>
-			<integer>200</integer>
+			<integer>190</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>

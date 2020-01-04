@@ -1,6 +1,6 @@
 # 时间戳转化工具
 
-时间戳和日期相互转化的Alfred小工具。想过如下图：
+时间戳和日期相互转化的Alfred小工具。如下图：
 
 ![image-20200104154757755](https://github.com/BaskerShu/datetime_converter_workflow/blob/master/release/image-20200104154757755.png)
 
@@ -9,7 +9,7 @@
 ### 安装下载
 
 点击链接进行下载安装
-![下载](https://github.com/BaskerShu/datetime_converter_workflow/blob/master/release/datetime_converter_workflow.alfredworkflow)
+![下载](https://raw.github.com/BaskerShu/datetime_converter_workflow/master/release/datetime_converter_workflow.alfredworkflow)
 
 ### 使用
 

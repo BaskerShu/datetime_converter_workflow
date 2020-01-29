@@ -7,7 +7,7 @@ from collections import namedtuple
 from dateutil import tz
 import time
 from parser.factory import ParserFactory
-from workflow import Workflow, ICON_CLOCK
+from workflow import Workflow, ICON_CLOCK, ICON_ERROR
 
 # 获取时区
 tz_str = os.environ.get('ALFRED_TZ')
@@ -20,8 +20,15 @@ def process(wf):
         query_str = wf.args[0]  # 需要查询的时间参数
     except IndexError:
         query_str = 'now'
-    dt = parse_query_str(query_str)
-    if dt:
+    try:
+        dt = parse_query_str(query_str)
+    except Exception as ex:
+        wf.add_item(title='input error',
+                    subtitle='error',
+                    arg=str(ex),
+                    valid=True,
+                    icon=ICON_ERROR)
+    else:
         datetime_items = serialize_datetime(dt)
         for item in datetime_items:
             wf.add_item(title=item.title,

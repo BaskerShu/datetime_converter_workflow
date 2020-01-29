@@ -8,8 +8,8 @@ class ParserFactory(object):
     @staticmethod
     def get_correspond_parser(query_str):
         query_str = str(query_str).strip('"\' ')
-        if query_str == u'now':
-            parser = NowParser()
+        if query_str.startswith(u'now'):
+            parser = NowParser(query_str)
         else:
             try:
                 ts = float(query_str)

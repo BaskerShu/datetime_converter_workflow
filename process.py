@@ -42,33 +42,27 @@ def parse_query_str(query_str):
 
 
 def serialize_datetime(dt):
-    datetime_items = []
     Item = namedtuple(u'Item', u'title subtitle arg')
+    date_ = dt.date()
 
-    # first item
-    item_value = str(int(time.mktime(dt.timetuple())))
-    first_item = Item(title=item_value, subtitle='UTC Timestamp', arg=item_value)
-    datetime_items.append(first_item)
-
-    # Various formats
-    formats = [
-        # 1937-01-01 12:00:27
-        ("%Y-%m-%d %H:%M:%S", ''),
-        # 19 May 2002 15:21:36
-        ("%d %b %Y %H:%M:%S", ''),
-        # Sun, 19 May 2002 15:21:36
-        ("%a, %d %b %Y %H:%M:%S", ''),
-        # 1937-01-01T12:00:27
-        ("%Y-%m-%dT%H:%M:%S", ''),
-        # 1996-12-19T16:39:57-0800
-        ("%Y-%m-%dT%H:%M:%S%z", ''),
+    # 当前时间（时间戳和具体时间）
+    datetime_timestamp, datetime_str = _get_timestamp_and_strftime(dt)
+    date_timestamp, date_str = _get_timestamp_and_strftime(date_)
+    datetime_items = [
+        Item(title=datetime_timestamp, subtitle='datetime timestamp', arg=datetime_timestamp),
+        Item(title=datetime_str, subtitle='datetime', arg=datetime_str),
+        Item(title=date_timestamp, subtitle='date timestamp', arg=date_timestamp),
+        Item(title=date_str, subtitle='date', arg=date_str),
     ]
-    for format_, description in formats:
-        item_value = dt.strftime(format_)
-        item = Item(title=item_value, subtitle=description, arg=item_value)
-        datetime_items.append(item)
 
     return datetime_items
+
+
+def _get_timestamp_and_strftime(dt):
+    format_ = "%Y-%m-%d %H:%M:%S"
+    timestamp = str(int(time.mktime(dt.timetuple())))
+    datetime_str = dt.strftime(format_)
+    return timestamp, datetime_str
 
 
 if __name__ == '__main__':
